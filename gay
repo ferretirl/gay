@@ -53,8 +53,9 @@ class _Flags(Enum):
     ABRO = auto()
     NEUTROIS = auto()
     TRIGENDER = auto()
-
-
+    AROACE = auto()
+    INTERSEX = auto()
+    DEMISEXUAL = auto()
 _HexColour = str
 _RGB = Tuple[int, int, int]
 _RawPalette = Sequence[_HexColour]
@@ -129,6 +130,10 @@ _FLAG_SPECS: Mapping[_Flags, _RawPalette] = {
     _Flags.ABRO: ("#75CA92", "#B2E4C5", "#FFFFFF", "#E695B5", "#DA446C"),
     _Flags.NEUTROIS: ("#FFFFFF", "#2F9C1D", "#000000"),
     _Flags.TRIGENDER: ("#FF95C5", "#9580FF", "#67D967", "#9580FF", "#FF95C5"),
+    _Flags.AROACE: ("#E28C00", "#ECAD3F", "#FFFFFF", "#62B0D9", "#1F3554"),
+    _Flags.DEMISEXUAL: ("#FFFFFF", "#6E0070", "#D2D2D2", "#000000"),
+    _Flags.INTERSEX: ("#FFD800", "#7902AA", "#FFD800"), # sorryyyyy :c
+    _Flags.DEMISEXUAL: ("#FFFFFF", "#6E0070", "#D2D2D2", "#000000"),
 }
 
 
@@ -287,6 +292,25 @@ def _parse_args() -> Namespace:
             action="store_const",
             dest="flag",
             const=_Flags.TRIGENDER,
+        )
+        flag_group.add_argument(
+            "--aroace",
+            action="store_const",
+            dest="flag",
+            const=_Flags.AROACE,
+        )
+        flag_group.add_argument(
+            "--intersex",
+            action="store_const",
+            dest="flag",
+            const=_Flags.INTERSEX,
+        )
+        flag_group.add_argument(
+            "--demi",
+            "--demisexual",
+            action="store_const",
+            dest="flag",
+            const=_Flags.DEMISEXUAL,
         )
 
     with nullcontext(parser.add_argument_group()) as opt_group:
