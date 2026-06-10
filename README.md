@@ -1,6 +1,6 @@
-# [GAY 🏳️‍🌈](https://ms-jpq.github.io/gay)
+# slightly gayer fork of [GAY 🏳️‍🌈](https://ms-jpq.github.io/gay)
 
-Colour your text / terminal to be more gay.
+Colour your text / terminal to be even more gay.
 
 Gayer version of [`lolcat`](https://github.com/busyloop/lolcat)
 
